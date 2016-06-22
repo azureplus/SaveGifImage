@@ -46,9 +46,8 @@ iOS 的相册是支持保存 GIF 和 APNG 动图的，只是不能直接播放�
 
 
 ###获取数据
-  
+  ```
    NSURL *imageURL = [info valueForKey:UIImagePickerControllerReferenceURL];
-   
     __weak typeof(self) weakSelf = self;
     ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
     [assetslibrary assetForURL:imageURL resultBlock:^(ALAsset *asset) {
@@ -61,6 +60,8 @@ iOS 的相册是支持保存 GIF 和 APNG 动图的，只是不能直接播放�
         weakSelf.imageView.image = image;
 
     } failureBlock:nil];
+    
+    ```
 
 
 
